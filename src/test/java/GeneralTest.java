@@ -8,8 +8,6 @@ import java.sql.Driver;
 
 public class GeneralTest {
 
-
-
     @Test
     public void GeneralTest() throws InterruptedException {
 
@@ -30,7 +28,6 @@ public class GeneralTest {
         String Expected = "Account Number : 1004 , Balance : 750 , Currency : Dollar";
 
         //All HTMLS
-
         selenium.driver.get(url);
         Thread.sleep(3000);
         selenium.GetElement(CustomerLogin).click();
@@ -40,7 +37,6 @@ public class GeneralTest {
         selenium.GetElement(ChooseHarry).click();
         selenium.GetElement(LoginButton).click();
 
-
         //Deposit
         Thread.sleep(1000);
         selenium.GetElement(DepositSelector).click();
@@ -48,7 +44,6 @@ public class GeneralTest {
         selenium.GetElement(AmountInput).sendKeys(DepositAmount);
         selenium.GetElement(DepositInput).click();
         Thread.sleep(3000);
-
 
         //Withdrawl
         selenium.GetElement(WithdrawlButton).click();
@@ -61,12 +56,7 @@ public class GeneralTest {
         //Verify Amount
         String ActualValue = selenium.GetElement("body > div > div > div.ng-scope > div > div:nth-child(3)").getText();
         Assert.assertEquals(Expected,ActualValue);
-
-
     }
-
-
-
 
     @Test
     public void Q2() throws InterruptedException{
@@ -88,27 +78,21 @@ public class GeneralTest {
         String Expected = "Amadeo";
         String OpenAccount = "body > div > div > div.ng-scope > div > div.center > button.btn.btn-lg.tab.btn-primary";
 
-
         //All the elements used
-
-
+        
         //open website
-
         selenium.driver.get(url);
         Thread.sleep(2000);
 
         //Log In
-
         selenium.GetElement(ManagerLogIn).click();
         Thread.sleep(1000);
 
         //Add Customer
-
         selenium.GetElement(AddCustomerButton).click();
         Thread.sleep(1000);
 
         //Insert Full name & Postal code
-
         selenium.GetElement(FirstNameBox).sendKeys(Firstname);
         Thread.sleep(1000);
         selenium.GetElement(LastNameBox).sendKeys(Lastname);
@@ -117,28 +101,21 @@ public class GeneralTest {
         Thread.sleep(2000);
 
         //Insert Form
-
         selenium.GetElement(CustomerFormButton).click();
         Thread.sleep(2000);
 
         //Click on pop up
-
         selenium.driver.switchTo().alert().accept();
         Thread.sleep(1000);
 
         //Enter Chart and validate customer is in Chart
-
         selenium.GetElement(CustomerChart).click();
         Thread.sleep(1000);
         selenium.GetElement(SearchCustomer).sendKeys(Firstname);
         Thread.sleep(1000);
         String ActualValue = selenium.GetElement("body > div > div > div.ng-scope > div > div.ng-scope > div > div > table > tbody > tr > td:nth-child(1)").getText();
         Assert.assertEquals(Expected,ActualValue);
-
-
-
     }
-
 }
 
 

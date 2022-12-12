@@ -17,8 +17,5 @@ public class DOMselenium {
                         (By.cssSelector(Selctor));
         return element;
 
-
-
-    }
-
+       }
     }
